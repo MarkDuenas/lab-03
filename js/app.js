@@ -8,7 +8,8 @@ $.ajax('../data/page-1.json')
         title: animal.title,
         image_url: animal.image_url,
         description: animal.description,
-        class: "page1"
+        class: "page1",
+        horns: animal.horns,
       });
       $('#images').append(page1);
 
@@ -25,8 +26,8 @@ $.ajax('../data/page-2.json')
         title: animal.title,
         image_url: animal.image_url,
         description: animal.description,
-        class: "page2"
-
+        class: "page2",
+        horns: animal.horns,
 
       });
       $('#images').append(page2);
@@ -53,8 +54,8 @@ $('#page2').on('click', function () {
 
 function sortByTitle(images) {
   return images.sort(function (a, b) {
-    let nameA = $(a).html();
-    let nameB = $(b).html();
+    let nameA = $(a).attr('horns');
+    let nameB = $(b).attr('horns');
 
     console.log(nameA);
     console.log(nameB);
