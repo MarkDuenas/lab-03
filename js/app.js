@@ -54,11 +54,9 @@ $('#page2').on('click', function () {
 //  sort by title
 function sortByTitle(images) {
   return images.sort(function (a, b) {
-    let nameA = $(a).attr('horns');
-    let nameB = $(b).attr('horns');
 
-    console.log(nameA);
-    console.log(nameB);
+    let nameA = $(a).html();
+    let nameB = $(b).html();
 
     if (nameA < nameB) {
       return -1;
@@ -75,10 +73,6 @@ function sortByHorns(horns) {
   return horns.sort(function (a, b) {
     let hornA = $(a).attr("horns");
     let hornB = $(b).attr("horns");
-
-    console.log(hornA);
-    console.log(hornB);
-
     if (hornA < hornB) {
       return -1;
 
